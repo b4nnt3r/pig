@@ -53,7 +53,7 @@ end
 
 class StopsEven < Player
   def stops_even
-    num = rand(1..100)
+    super && num = rand(1..100)
     if num % 2 == 0
       @turn_over = true
     end
@@ -62,7 +62,7 @@ end
 
 class StopsOdd < Player
   def StopsOdd
-    num = rand(1..100)
+    super && num = rand(1..100)
     if num % 2 != 0
       @turn_over = false
     end
@@ -71,7 +71,7 @@ end
 
 class StopsScore < Player
   def stops_score
-    if @turn_score == 3
+    super && if @turn_score == 3
       @turn_over
     else
       super roll_again
@@ -81,7 +81,7 @@ end
 
 class StopsRolls < Player
   def stops_rolls
-    if roll == 11
+    super && if roll == 11
       @turn_over
     else
       super roll_again
